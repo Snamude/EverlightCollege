@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everlight College | Education for Life</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Nunito', sans-serif; }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .bg-everlight { background-color: #f59e0b; }
+        .text-everlight { color: #f59e0b; }
+        #mobile-menu { transition: all 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 smooth-scroll">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center shadow-md">
+                            <span class="text-white font-black text-xl">E</span>
+                        </div>
+                        <div>
+                            <span class="brand-font text-lg font-extrabold text-slate-900 block leading-none tracking-tight">EVERLIGHT</span>
+                            <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-amber-600">College Kampala</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-8 text-[13px] font-bold uppercase tracking-wide">
+                    <a href="#" class="text-amber-600 hover:text-amber-500 transition">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-amber-500 transition">About Us</a>
+                    <a href="#academics" class="text-slate-600 hover:text-amber-500 transition">Academics</a>
+                    <a href="#admissions" class="text-slate-600 hover:text-amber-500 transition">Admissions & Fees</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition shadow-md">Inquire Now</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-toggle" class="p-2 text-slate-900 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 p-4 space-y-4 shadow-inner">
+            <a href="#" class="block text-amber-600 font-bold">Home</a>
+            <a href="#about" class="block text-slate-700 font-bold">About Us</a>
+            <a href="#academics" class="block text-slate-700 font-bold">Academics</a>
+            <a href="#admissions" class="block text-slate-700 font-bold">Admissions</a>
+            <a href="#contact" class="block text-slate-700 font-bold">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-white pt-10 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="max-w-2xl mb-12 lg:mb-0 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-[11px] font-bold uppercase tracking-wider mb-6 border border-amber-100">
+                        <span class="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse mr-2"></span>
+                        O' Level & A' Level Section
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Education for <span class="text-amber-500">Life</span> & Eternity.
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                        Nurturing children into wholesome adults through academic excellence and vocational mastery. Located in the heart of Ggaba, Kampala.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#admissions" class="px-8 py-4 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200">
+                            View Admission Fees
+                        </a>
+                        <a href="#academics" class="px-8 py-4 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition">
+                            Skills & Curriculum
+                        </a>
+                    </div>
+                </div>
+                <div class="relative px-4">
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white">
+                        <img src="https://images.unsplash.com/photo-1523050335102-c325135167b5?auto=format&fit=crop&q=80&w=1200" alt="Students Learning" class="w-full h-[450px] object-cover">
+                    </div>
+                    <div class="absolute -top-4 -right-2 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:block">
+                        <div class="text-amber-500 text-xs font-black tracking-widest uppercase mb-1">Motto</div>
+                        <div class="text-lg font-bold text-slate-900">Faith, Hope & Love</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-8 text-amber-400">Education with a Purpose</h2>
+                    <p class="text-slate-400 mb-8">At Everlight College, we believe God placed us on earth to know Him and make Him known. We partner with parents to ensure students are prepared for both the world and eternity.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="mt-1 bg-amber-500 rounded-full p-1"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg></div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-100">UNEB Curriculum</h4>
+                                <p class="text-sm text-slate-500">A rigorous academic program following national standards for S.1 to S.6.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mt-1 bg-amber-500 rounded-full p-1"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg></div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-100">Christian Leadership</h4>
+                                <p class="text-sm text-slate-500">Teachers who lead by example, mentoring students in moral discipline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-8 lg:p-12 rounded-[2.5rem] border border-white/10">
+                    <h3 class="text-xl font-bold text-amber-500 mb-6 uppercase tracking-widest text-center">Our Commitment</h3>
+                    <div class="space-y-6 text-sm text-slate-300">
+                        <p><strong class="text-white block mb-1">Vision:</strong> A Christian community graduating students marked by academic excellence and personal competence.</p>
+                        <hr class="border-white/10">
+                        <p><strong class="text-white block mb-1">Mission:</strong> To provide mastery of essential knowledge and instill moral values through quality education.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Academics & Vocational Excellence</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Our curriculum is designed to empower students with both theoretical knowledge and practical skills that last a lifetime.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Sciences -->
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.829c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Sciences</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Our science department focuses on practical experimentation and inquiry. We offer Biology, Chemistry, Physics, and Agriculture, ensuring students understand the natural world and modern agricultural techniques.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">BIOLOGY</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">CHEMISTRY</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">PHYSICS</span>
+                    </div>
+                </div>
+
+                <!-- Humanities -->
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Humanities</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Geography, History, and Christian Religious Education (C.R.E) are taught to give students a deep appreciation for our heritage, global dynamics, and spiritual foundation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">GEOGRAPHY</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">HISTORY</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">C.R.E</span>
+                    </div>
+                </div>
+
+                <!-- Languages & Maths -->
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Languages & Math</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Strong emphasis on English Language and Literature to enhance communication skills, paired with rigorous Mathematics to develop logic and analytical problem-solving abilities.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">ENGLISH</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">MATHS</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md font-bold text-slate-500">LITERATURE</span>
+                    </div>
+                </div>
+
+                <!-- Vocational: Bakery -->
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Bakery & Cookery</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Students learn the art of baking and food preparation. This practical course encourages creativity and equips them with marketable catering skills for the future.</p>
+                    <span class="text-[10px] bg-amber-500 text-white px-3 py-1 rounded-full font-black uppercase">Vocational Track</span>
+                </div>
+
+                <!-- Vocational: ICT -->
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">ICT & Computing</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">In the digital age, we ensure our students are computer literate. The course covers basic software usage, internet safety, and introduction to computer science.</p>
+                    <span class="text-[10px] bg-slate-800 text-white px-3 py-1 rounded-full font-black uppercase">Tech Track</span>
+                </div>
+
+                <!-- Vocational: Tailoring -->
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758L6.242 12l2.879-2.879"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Art & Tailoring</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">This track fosters artistic expression through garment design and tailoring. Students learn to create functional art, preparing them for the textile industry.</p>
+                    <span class="text-[10px] bg-red-500 text-white px-3 py-1 rounded-full font-black uppercase">Creative Track</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions & Fees Section -->
+    <section id="admissions" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Transparent Admissions & Fees</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Providing high-quality education at competitive rates. Here is a full breakdown of the current term costs.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Core Tuition Card -->
+                <div class="bg-slate-900 rounded-[2rem] p-8 text-white shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 11-5-11-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 text-amber-500">Termly Tuition</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-end border-b border-white/10 pb-4">
+                            <div>
+                                <span class="block text-xs uppercase font-bold text-slate-400">Day Scholars</span>
+                                <span class="text-3xl font-black">283,000/-</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-white/10 pb-4">
+                            <div>
+                                <span class="block text-xs uppercase font-bold text-slate-400">Boarding Section</span>
+                                <span class="text-3xl font-black">583,000/-</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed italic">Includes basic tuition and classroom instruction for the current term.</p>
+                    </div>
+                </div>
+
+                <!-- One-Time / Administrative Card -->
+                <div class="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-slate-900">Functional Fees</h3>
+                    <div class="space-y-4 text-sm font-semibold">
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500">Admission Form</span>
+                            <span class="text-slate-900">30,000/-</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500">Uniform (Full Set)</span>
+                            <span class="text-slate-900">110,000/-</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500">Identity Card & Library</span>
+                            <span class="text-slate-900">30,000/-</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500">Building Fund (Termly)</span>
+                            <span class="text-slate-900">20,000/-</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="text-slate-500">Lunch (Day Scholars)</span>
+                            <span class="text-slate-900">100,000/-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boarding Requirements Card -->
+                <div class="bg-amber-50 rounded-[2rem] p-8 border border-amber-100">
+                    <h3 class="text-xl font-bold mb-6 text-amber-900">Boarding Requirements</h3>
+                    <ul class="text-xs space-y-3 text-amber-800 font-medium">
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z"></path></svg> Mattress (3 x 6) & Mosquito Net</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z"></path></svg> Basin, Bucket & Jerrycan</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z"></path></svg> Metal Suitcase & Padlocks</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z"></path></svg> Personal Hygiene (Soap, Toothpaste)</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z"></path></svg> 2 Pairs of Sandals & Black Shoes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Inquiry Form -->
+            <div id="contact" class="max-w-4xl mx-auto bg-slate-50 rounded-[3rem] p-8 lg:p-16 border border-slate-200 shadow-sm">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-bold text-slate-900">Digital Admission Inquiry</h3>
+                    <p class="text-slate-500 text-sm mt-2">Submit your interest online and our registrar will contact you.</p>
+                </div>
+                <form id="inquiryForm" class="grid sm:grid-cols-2 gap-6">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Student Full Name</label>
+                        <input type="text" class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition" required>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Parent Phone Number</label>
+                        <input type="tel" class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition" required>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Target Class</label>
+                        <select class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition">
+                            <option>Senior 1</option>
+                            <option>Senior 2</option>
+                            <option>Senior 3</option>
+                            <option>Senior 4</option>
+                            <option>Senior 5</option>
+                            <option>Senior 6</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Study Mode</label>
+                        <select class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition">
+                            <option>Day Scholar</option>
+                            <option>Boarding Section</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="col-span-2 py-5 bg-amber-500 text-white font-bold rounded-2xl hover:bg-amber-600 transition shadow-lg shadow-amber-200">
+                        Submit Inquiry
+                    </button>
+                    <div id="successMsg" class="hidden col-span-2 p-5 bg-green-100 text-green-800 rounded-2xl text-center font-bold">
+                        Form submitted successfully! We will be in touch.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16 border-b border-white/5 pb-16">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">E</span>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">EVERLIGHT</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+                        Education for Life and Eternity. Nurturing children into wholesome adults marked by excellence.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-6">Kampala Campus</h4>
+                    <p class="text-slate-400 text-sm mb-2">Kalungu Road, Off Ggaba Road</p>
+                    <p class="text-slate-400 text-sm mb-2">Soya Stage, Kampala, Uganda</p>
+                    <p class="text-slate-400 text-sm">P.O.Box 75816, Clock Tower</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-amber-500 mb-6">Contact Info</h4>
+                    <p class="text-slate-400 text-sm mb-2">+256 700 251 482</p>
+                    <p class="text-slate-400 text-sm mb-2">+256 775 251 135</p>
+                    <p class="text-slate-400 text-sm">info@everlightcollege.com</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-slate-500 text-[10px] uppercase font-bold tracking-widest">
+                <p>&copy; 2024 Everlight College Kampala.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Home</a>
+                    <a href="#admissions" class="hover:text-white transition">Admissions</a>
+                    <a href="#about" class="hover:text-white transition">Staff Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form Logic
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const success = document.getElementById('successMsg');
+            btn.innerText = 'Submitting...';
+            setTimeout(() => {
+                btn.classList.add('hidden');
+                success.classList.remove('hidden');
+                e.target.reset();
+            }, 1000);
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
