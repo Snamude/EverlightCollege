@@ -585,6 +585,26 @@
     </footer>
 
     <script>
+
+         // Science Department Lightbox Logic
+         function openLightbox(src, captionText) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const captionContainer = lightbox.querySelector('p'); // Targets the text under the image
+
+    lightboxImg.src = src;
+    
+    // Set the caption text immediately
+    if (captionText) {
+        captionContainer.innerText = captionText;
+    } else {
+        captionContainer.innerText = "Click anywhere to close";
+    }
+
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+}
+
         // Gallery Lightbox Logic
         function openLightbox(src) {
             const lb = document.getElementById('lightbox');
