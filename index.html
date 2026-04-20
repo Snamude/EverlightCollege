@@ -242,13 +242,13 @@
             <p class="text-slate-600 text-sm">Hands-on study of living organisms and life processes using modern microscopes and specimens. Click any photo to expand.</p>
             
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0029.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students examining biological specimens in the laboratory.">
-    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130600.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical Biology lesson: Using microscopes to study cell structure.">
-    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130605.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Biology student recording detailed laboratory observations.">
-    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130607.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Interactive science learning and research at Everlight College.">
-    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130625.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Teacher demonstrating advanced microscope techniques to students.">
-    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0027.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Collaborative student group conducting a science experiment.">
-    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0028.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Developing essential practical skills in the Biology lab.">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0029.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students observing specimens in the Biology Lab">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130600.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Hands-on learning with modern microscopes">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130605.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students recording data during practicals">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130607.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Everlight students engaged in science research">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130625.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Demonstrating proper lab equipment usage">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0027.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Collaborative science experiment group">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0028.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical skills assessment in the laboratory">
 </div>
         </div>
 
@@ -590,34 +590,17 @@
 function openLightbox(src, captionText) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxText = lightbox.querySelector('p'); // This is the text below the image
+
+    lightboxImg.src = src;
     
-    // This finds the paragraph that usually says "Click anywhere to close"
-    const textElement = lightbox.querySelector('p');
-
-    // 1. Set the Image
-    if (lightboxImg) {
-        lightboxImg.src = src;
+    // This part builds the text: Caption on top, Close message below
+    if (captionText && captionText !== "Biology Lab") {
+        lightboxText.innerHTML = `<span style="display:block; font-weight:bold; margin-bottom:5px;">${captionText}</span> <span style="font-size:0.8em; opacity:0.8;">Click anywhere to close</span>`;
+    } else {
+        lightboxText.innerText = "Click anywhere to close";
     }
 
-    // 2. Set the Caption + Instructions
-    if (textElement) {
-        // If there's a caption, show it in bold above the instructions
-        if (captionText && captionText.length > 5) {
-            textElement.innerHTML = `
-                <div style="color: white; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; line-height: 1.4;">
-                    ${captionText}
-                </div>
-                <div style="font-size: 0.85rem; opacity: 0.7; letter-spacing: 0.05em; text-transform: uppercase;">
-                    Click anywhere to close
-                </div>
-            `;
-        } else {
-            // If no caption, just show the instruction
-            textElement.innerHTML = "Click anywhere to close";
-        }
-    }
-
-    // 3. Show the Lightbox
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
 }
