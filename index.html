@@ -615,30 +615,29 @@
 
          // Science Department Lightbox Logic
 function openLightbox(src, caption) {
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightbox-img');
-    
-    // This finds the <p> tag that currently says "Click anywhere to close"
-    var textElement = lightbox.querySelector('p');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxText = lightbox.querySelector('p'); // Finds the text area below the image
 
-    // Update the image source
+    // 1. Update the Image
     if (lightboxImg) {
         lightboxImg.src = src;
     }
 
-    // Update the text area
-    if (textElement) {
-        if (caption && caption.length > 0) {
-            // This replaces the old text with your Caption + the Instruction
-            textElement.innerHTML = 
-                '<span style="display:block; color:white; font-weight:bold; font-size:1.1rem; margin-bottom:10px;">' + caption + '</span>' +
-                '<span style="font-size:0.8rem; opacity:0.8;">Click anywhere to close</span>';
+    // 2. Update the Caption
+    if (lightboxText) {
+        if (caption) {
+            // Puts the caption in bold on top, and instructions underneath
+            lightboxText.innerHTML = `
+                <span style="display:block; font-weight:bold; color:white; margin-bottom:5px; font-size:1.1rem;">${caption}</span>
+                <span style="font-size:0.8rem; opacity:0.7;">Click anywhere to close</span>
+            `;
         } else {
-            textElement.innerHTML = 'Click anywhere to close';
+            lightboxText.innerHTML = "Click anywhere to close";
         }
     }
 
-    // Show the lightbox
+    // 3. Show the Lightbox
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
 }
