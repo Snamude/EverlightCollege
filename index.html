@@ -588,38 +588,32 @@
 
          // Science Department Lightbox Logic
 function openLightbox(src, caption) {
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightbox-img');
-    var lightboxText = lightbox.querySelector('p');
+    try {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        var lightboxText = lightbox.querySelector('p');
 
-    // Always set the image source first
-    if (lightboxImg) {
-        lightboxImg.src = src;
-    }
-
-    // Set the caption above the instruction
-    if (lightboxText) {
-        if (caption && caption.length > 0) {
-            lightboxText.innerHTML = '<strong style="display:block; color:white; margin-bottom:8px; font-size:1.1rem;">' + caption + '</strong>' + 
-                                     '<span style="font-size:0.8rem; opacity:0.7;">Click anywhere to close</span>';
-        } else {
-            lightboxText.innerHTML = 'Click anywhere to close';
+        // Step 1: Set Image (This is the most important part)
+        if (lightboxImg) {
+            lightboxImg.src = src;
         }
+
+        // Step 2: Handle Caption (Only if the paragraph exists)
+        if (lightboxText) {
+            if (caption && caption.trim() !== "") {
+                lightboxText.innerHTML = '<strong style="display:block; color:white; margin-bottom:8px; font-size:1.1rem;">' + caption + '</strong>' + 
+                                         '<span style="font-size:0.8rem; opacity:0.7;">Click anywhere to close</span>';
+            } else {
+                lightboxText.innerHTML = 'Click anywhere to close';
+            }
+        }
+
+        // Step 3: Reveal Lightbox
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+    } catch (e) {
+        console.error("Lightbox error:", e);
     }
-
-    // Show the lightbox
-    lightbox.classList.remove('hidden');
-    lightbox.classList.add('flex');
-}
-
-    // Open the lightbox
-    lightbox.classList.remove('hidden');
-    lightbox.classList.add('flex');
-}
-
-    // 3. Show Lightbox
-    lightbox.classList.remove('hidden');
-    lightbox.classList.add('flex');
 }
 
         // Gallery Lightbox Logic
