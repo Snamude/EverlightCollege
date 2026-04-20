@@ -591,27 +591,27 @@ function openLightbox(src, caption) {
     var lightbox = document.getElementById('lightbox');
     var lightboxImg = document.getElementById('lightbox-img');
     
-    // This finds the text area regardless of whether it's a <p> or a <div>
-    var infoText = lightbox.querySelector('p') || lightbox.querySelector('.text-center');
+    // This finds the <p> tag that currently says "Click anywhere to close"
+    var textElement = lightbox.querySelector('p');
 
-    // 1. Set the Image
+    // Update the image source
     if (lightboxImg) {
         lightboxImg.src = src;
     }
 
-    // 2. Inject the Caption
-    if (infoText) {
-        // If there is an alt text, show it. If not, just show the close message.
+    // Update the text area
+    if (textElement) {
         if (caption && caption.length > 0) {
-            infoText.innerHTML = 
-                '<div style="color: white; font-weight: bold; margin-bottom: 10px; font-size: 18px;">' + caption + '</div>' +
-                '<div style="color: rgba(255,255,255,0.6); font-size: 14px;">Click anywhere to close</div>';
+            // This replaces the old text with your Caption + the Instruction
+            textElement.innerHTML = 
+                '<span style="display:block; color:white; font-weight:bold; font-size:1.1rem; margin-bottom:10px;">' + caption + '</span>' +
+                '<span style="font-size:0.8rem; opacity:0.8;">Click anywhere to close</span>';
         } else {
-            infoText.innerHTML = '<div style="color: white;">Click anywhere to close</div>';
+            textElement.innerHTML = 'Click anywhere to close';
         }
     }
 
-    // 3. Show the Lightbox
+    // Show the lightbox
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
 }
