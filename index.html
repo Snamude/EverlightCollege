@@ -615,29 +615,37 @@
 
          // Science Department Lightbox Logic
 function openLightbox(src, caption) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxText = lightbox.querySelector('p'); // Finds the text area below the image
-
-    // 1. Update the Image
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    
+    // 1. Set the image source
     if (lightboxImg) {
         lightboxImg.src = src;
     }
 
-    // 2. Update the Caption
-    if (lightboxText) {
-        if (caption) {
-            // Puts the caption in bold on top, and instructions underneath
-            lightboxText.innerHTML = `
-                <span style="display:block; font-weight:bold; color:white; margin-bottom:5px; font-size:1.1rem;">${caption}</span>
-                <span style="font-size:0.8rem; opacity:0.7;">Click anywhere to close</span>
-            `;
-        } else {
-            lightboxText.innerHTML = "Click anywhere to close";
+    // 2. Find the text element by searching for the "Click" instruction
+    var target = null;
+    var potentialElements = lightbox.querySelectorAll('p, div, span');
+    
+    for (var i = 0; i < potentialElements.length; i++) {
+        if (potentialElements[i].innerText.includes("Click anywhere to close")) {
+            target = potentialElements[i];
+            break;
         }
     }
 
-    // 3. Show the Lightbox
+    // 3. Inject the caption above the instruction
+    if (target) {
+        if (caption && caption.length > 2) {
+            target.innerHTML = 
+                '<div style="color:white; font-weight:bold; font-size:1.1rem; margin-bottom:8px; line-height:1.2;">' + caption + '</div>' +
+                '<div style="font-size:0.8rem; opacity:0.7; text-transform:uppercase;">Click anywhere to close</div>';
+        } else {
+            target.innerHTML = "Click anywhere to close";
+        }
+    }
+
+    // 4. Show the lightbox
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
 }
