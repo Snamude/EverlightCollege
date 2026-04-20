@@ -587,34 +587,27 @@
     <script>
 
          // Science Department Lightbox Logic
-function openLightbox(src, captionText) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    
-    // This finds the text container inside the lightbox
-    // It looks for a <p> tag or a <div> with text-centered classes
-    const textContainer = lightbox.querySelector('p') || lightbox.querySelector('.text-center');
+function openLightbox(src, caption) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxText = lightbox.querySelector('p');
 
-    // Update Image
+    // Set the image first so it always expands
     if (lightboxImg) {
         lightboxImg.src = src;
     }
 
-    // Update Text (Caption + Instruction)
-    if (textContainer) {
-        // If there is an actual caption in the 'alt' attribute
-        if (captionText && captionText !== "" && captionText !== "Biology Lab") {
-            textContainer.innerHTML = `
-                <div style="color: white; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem;">${captionText}</div>
-                <div style="font-size: 0.8rem; opacity: 0.7;">Click anywhere to close</div>
-            `;
+    // Handle the caption text
+    if (lightboxText) {
+        if (caption && caption !== "" && caption !== "Biology Lab") {
+            lightboxText.innerHTML = '<span style="display:block; color:white; font-weight:bold; font-size:1.1rem; margin-bottom:5px;">' + caption + '</span>' + 
+                                     '<span style="font-size:0.8rem; opacity:0.7;">Click anywhere to close</span>';
         } else {
-            // Default if no specific caption is found
-            textContainer.innerHTML = "Click anywhere to close";
+            lightboxText.innerHTML = 'Click anywhere to close';
         }
     }
 
-    // Show the Lightbox
+    // Open the lightbox
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
 }
