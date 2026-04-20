@@ -625,7 +625,7 @@ function openLightbox(src, caption) {
 
     // 2. Find the text element by searching for the "Click" instruction
     var target = null;
-    var potentialElements = lightbox.querySelectorAll('p, div, span');
+    var potentialElements = lightbox.querySelectorAll('p, div, span, figcaption');
     
     for (var i = 0; i < potentialElements.length; i++) {
         if (potentialElements[i].innerText.includes("Click anywhere to close")) {
