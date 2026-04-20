@@ -416,7 +416,7 @@
                 <h2 class="text-4xl font-extrabold text-slate-900 mb-4">School Gallery</h2>
                 <p class="text-slate-600 max-w-2xl mx-auto">A glimpse into life at Everlight College. Click any photo to expand.</p>
             </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+   <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
     <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0029.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students examining biological specimens in the laboratory.">
     <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130600.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical Biology lesson: Using microscopes to study cell structure.">
     <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130605.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Biology student recording detailed laboratory observations.">
@@ -590,20 +590,25 @@ function openLightbox(src, caption) {
     var lightboxImg = document.getElementById('lightbox-img');
     var lightboxText = lightbox.querySelector('p');
 
-    // Set the image first so it always expands
+    // Always set the image source first
     if (lightboxImg) {
         lightboxImg.src = src;
     }
 
-    // Handle the caption text
+    // Set the caption above the instruction
     if (lightboxText) {
-        if (caption && caption !== "" && caption !== "Biology Lab") {
-            lightboxText.innerHTML = '<span style="display:block; color:white; font-weight:bold; font-size:1.1rem; margin-bottom:5px;">' + caption + '</span>' + 
+        if (caption && caption.length > 0) {
+            lightboxText.innerHTML = '<strong style="display:block; color:white; margin-bottom:8px; font-size:1.1rem;">' + caption + '</strong>' + 
                                      '<span style="font-size:0.8rem; opacity:0.7;">Click anywhere to close</span>';
         } else {
             lightboxText.innerHTML = 'Click anywhere to close';
         }
     }
+
+    // Show the lightbox
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+}
 
     // Open the lightbox
     lightbox.classList.remove('hidden');
