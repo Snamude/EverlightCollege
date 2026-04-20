@@ -587,31 +587,31 @@
     <script>
 
          // Science Department Lightbox Logic
-function openLightbox(imageSource, captionText) {
+function openLightbox(src, caption) {
     var lightbox = document.getElementById('lightbox');
     var lightboxImg = document.getElementById('lightbox-img');
     
-    // This finds the exact <p> or <div> that says "Click anywhere to close"
-    var captionContainer = lightbox.querySelector('p') || lightbox.querySelector('.text-slate-400');
+    // This finds the text area regardless of whether it's a <p> or a <div>
+    var infoText = lightbox.querySelector('p') || lightbox.querySelector('.text-center');
 
-    // 1. Set the big image
+    // 1. Set the Image
     if (lightboxImg) {
-        lightboxImg.src = imageSource;
+        lightboxImg.src = src;
     }
 
-    // 2. Set the unique caption
-    if (captionContainer) {
-        if (captionText && captionText.length > 0) {
-            // This builds the two-line look: Bold Caption + Small Instruction
-            captionContainer.innerHTML = 
-                '<div style="color: white; font-weight: bold; margin-bottom: 8px; font-size: 1.1rem;">' + captionText + '</div>' +
-                '<div style="font-size: 0.85rem; opacity: 0.7;">Click anywhere to close</div>';
+    // 2. Inject the Caption
+    if (infoText) {
+        // If there is an alt text, show it. If not, just show the close message.
+        if (caption && caption.length > 0) {
+            infoText.innerHTML = 
+                '<div style="color: white; font-weight: bold; margin-bottom: 10px; font-size: 18px;">' + caption + '</div>' +
+                '<div style="color: rgba(255,255,255,0.6); font-size: 14px;">Click anywhere to close</div>';
         } else {
-            captionContainer.innerHTML = 'Click anywhere to close';
+            infoText.innerHTML = '<div style="color: white;">Click anywhere to close</div>';
         }
     }
 
-    // 3. Reveal the Lightbox
+    // 3. Show the Lightbox
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
 }
