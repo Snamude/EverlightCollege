@@ -587,18 +587,18 @@
     <script>
 
          // Science Department Lightbox Logic
-         function openLightbox(src, captionText) {
+function openLightbox(src, captionText) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const captionContainer = lightbox.querySelector('p'); // Targets the text under the image
+    const lightboxText = lightbox.querySelector('p'); // This is the text below the image
 
     lightboxImg.src = src;
     
-    // Set the caption text immediately
-    if (captionText) {
-        captionContainer.innerText = captionText;
+    // This part builds the text: Caption on top, Close message below
+    if (captionText && captionText !== "Biology Lab") {
+        lightboxText.innerHTML = `<span style="display:block; font-weight:bold; margin-bottom:5px;">${captionText}</span> <span style="font-size:0.8em; opacity:0.8;">Click anywhere to close</span>`;
     } else {
-        captionContainer.innerText = "Click anywhere to close";
+        lightboxText.innerText = "Click anywhere to close";
     }
 
     lightbox.classList.remove('hidden');
