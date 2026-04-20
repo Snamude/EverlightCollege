@@ -587,33 +587,33 @@
     <script>
 
          // Science Department Lightbox Logic
-function openLightbox(src, caption) {
-    try {
-        var lightbox = document.getElementById('lightbox');
-        var lightboxImg = document.getElementById('lightbox-img');
-        var lightboxText = lightbox.querySelector('p');
+function openLightbox(imageSource, captionText) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    
+    // This finds the exact <p> or <div> that says "Click anywhere to close"
+    var captionContainer = lightbox.querySelector('p') || lightbox.querySelector('.text-slate-400');
 
-        // Step 1: Set Image (This is the most important part)
-        if (lightboxImg) {
-            lightboxImg.src = src;
-        }
-
-        // Step 2: Handle Caption (Only if the paragraph exists)
-        if (lightboxText) {
-            if (caption && caption.trim() !== "") {
-                lightboxText.innerHTML = '<strong style="display:block; color:white; margin-bottom:8px; font-size:1.1rem;">' + caption + '</strong>' + 
-                                         '<span style="font-size:0.8rem; opacity:0.7;">Click anywhere to close</span>';
-            } else {
-                lightboxText.innerHTML = 'Click anywhere to close';
-            }
-        }
-
-        // Step 3: Reveal Lightbox
-        lightbox.classList.remove('hidden');
-        lightbox.classList.add('flex');
-    } catch (e) {
-        console.error("Lightbox error:", e);
+    // 1. Set the big image
+    if (lightboxImg) {
+        lightboxImg.src = imageSource;
     }
+
+    // 2. Set the unique caption
+    if (captionContainer) {
+        if (captionText && captionText.length > 0) {
+            // This builds the two-line look: Bold Caption + Small Instruction
+            captionContainer.innerHTML = 
+                '<div style="color: white; font-weight: bold; margin-bottom: 8px; font-size: 1.1rem;">' + captionText + '</div>' +
+                '<div style="font-size: 0.85rem; opacity: 0.7;">Click anywhere to close</div>';
+        } else {
+            captionContainer.innerHTML = 'Click anywhere to close';
+        }
+    }
+
+    // 3. Reveal the Lightbox
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
 }
 
         // Gallery Lightbox Logic
