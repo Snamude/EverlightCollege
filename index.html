@@ -146,18 +146,41 @@
     </div>
 </header>
 
-<div class="flex flex-col sm:flex-row gap-4 justify-start">
+<style>
+    /* Styles for the sticky button behavior */
+    .sticky-enroll {
+        position: fixed;
+        top: 80px; /* Adjust this to match your menu height */
+        z-index: 9999;
+        /* Mobile: Full width matching header padding */
+        left: 16px; 
+        right: 16px;
+    }
+
+    /* Desktop: Side-by-side and specific width */
+    @media (min-width: 640px) {
+        .sticky-enroll {
+            position: fixed;
+            top: 80px;
+            left: auto;
+            right: auto;
+            width: auto;
+        }
+    }
+</style>
+
+<div class="flex flex-col sm:flex-row gap-4 justify-start items-start">
+    
     <a href="https://ecollegeportal.web.app/" 
-       style="position: fixed; top: 80px; z-index: 9999;" 
-       class="px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
+       class="sticky-enroll px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
         Enroll Child, View Grades or Upload Grades
     </a>
 
-    <div class="px-4 py-3 opacity-0 pointer-events-none text-sm whitespace-nowrap" aria-hidden="true">
+    <div class="hidden sm:block px-4 py-3 opacity-0 pointer-events-none text-sm whitespace-nowrap" aria-hidden="true">
         Enroll Child, View Grades or Upload Grades
     </div>
 
-    <a href="#academics" class="px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
+    <a href="#academics" class="w-full sm:w-auto px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
         Curriculum
     </a>
 </div>
