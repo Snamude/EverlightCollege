@@ -146,38 +146,42 @@
     </div>
 </header>
 
-<div class="flex flex-col sm:flex-row gap-4 justify-start items-center mt-4 w-full">
-    <a id="enroll-button" href="https://ecollegeportal.web.app/" 
-       class="w-full sm:w-auto px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
-        Enroll Child, View Grades or Upload Grades
-    </a>
+<div class="text-left w-full mt-4">
+    <p class="text-md lg:text-lg text-slate-600 mb-6 leading-relaxed">
+        Nurturing children into wholesome adults through academic excellence and vocational mastery. 
+        Located in Ggaba Parish Makindye Division, Kampala, Uganda.
+    </p>
 
-    <a href="#academics" 
-       class="w-full sm:w-auto px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
-        Curriculum
-    </a>
+    <div class="flex flex-col sm:flex-row gap-4 justify-start items-center w-full">
+        <a id="enroll-button" href="https://ecollegeportal.web.app/" 
+           class="w-full sm:w-auto px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
+            Enroll Child, View Grades or Upload Grades
+        </a>
+
+        <a href="#academics" 
+           class="w-full sm:w-auto px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
+            Curriculum
+        </a>
+    </div>
 </div>
 
 <style>
-    /* Sticky state for the Enroll button */
+    /* Fixed/Sticky styles applied via JavaScript */
     .is-sticky-active {
         position: fixed !important;
-        top: 80px; /* Adjust to stay below menu */
-        left: 1rem; /* Matches the px-4 (16px) on mobile */
+        top: 80px; /* Sits below your navigation menu links */
+        left: 1rem; /* Aligns with standard mobile padding (px-4) */
         right: 1rem;
         width: calc(100% - 2rem) !important;
         z-index: 9999;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
     @media (min-width: 640px) {
         .is-sticky-active {
-            /* On desktop, keep it aligned with the content column */
+            /* On desktop, it maintains its natural width and left alignment */
             left: auto;
             right: auto;
             width: fit-content !important;
-            /* This ensures it sticks in the general area of the left column */
-            transform: none;
         }
     }
 </style>
@@ -185,15 +189,15 @@
 <script>
     const enrollBtn = document.getElementById('enroll-button');
     
-    // This calculates exactly where the button is on the page relative to the top
-    const getInitialPos = () => enrollBtn.getBoundingClientRect().top + window.scrollY;
-    let initialOffset = getInitialPos();
+    // Calculates position relative to the document
+    const getTargetPos = () => enrollBtn.getBoundingClientRect().top + window.scrollY;
+    let initialOffset = getTargetPos();
 
-    // Recalculate on resize in case the layout shifts
-    window.addEventListener('resize', () => { initialOffset = getInitialPos(); });
+    // Re-check position if user rotates phone or resizes window
+    window.addEventListener('resize', () => { initialOffset = getTargetPos(); });
 
     window.addEventListener('scroll', () => {
-        // Offset 80 matches the 'top' in CSS
+        // Triggers the sticky class once the button reaches the 80px mark
         if (window.pageYOffset > (initialOffset - 80)) {
             enrollBtn.classList.add('is-sticky-active');
         } else {
