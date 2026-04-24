@@ -146,44 +146,51 @@
     </div>
 </header>
 
-<style>
-    /* Styles for the sticky button behavior */
-    .sticky-enroll {
-        position: fixed;
-        top: 80px; /* Adjust this to match your menu height */
-        z-index: 9999;
-        /* Mobile: Full width matching header padding */
-        left: 16px; 
-        right: 16px;
-    }
-
-    /* Desktop: Side-by-side and specific width */
-    @media (min-width: 640px) {
-        .sticky-enroll {
-            position: fixed;
-            top: 80px;
-            left: auto;
-            right: auto;
-            width: auto;
-        }
-    }
-</style>
-
-<div class="flex flex-col sm:flex-row gap-4 justify-start items-start">
-    
-    <a href="https://ecollegeportal.web.app/" 
-       class="sticky-enroll px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
+<div class="flex flex-col sm:flex-row gap-4 justify-start items-center mt-4">
+    <a id="enroll-button" href="https://ecollegeportal.web.app/" 
+       class="w-full sm:w-auto px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
         Enroll Child, View Grades or Upload Grades
     </a>
-
-    <div class="hidden sm:block px-4 py-3 opacity-0 pointer-events-none text-sm whitespace-nowrap" aria-hidden="true">
-        Enroll Child, View Grades or Upload Grades
-    </div>
 
     <a href="#academics" class="w-full sm:w-auto px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
         Curriculum
     </a>
 </div>
+
+<style>
+    /* This class is applied automatically when you scroll */
+    .is-sticky-active {
+        position: fixed !important;
+        top: 70px; /* Adjust this so it sits perfectly below your menu */
+        left: 16px; /* Matches mobile padding */
+        right: 16px;
+        width: calc(100% - 32px) !important;
+        z-index: 9999;
+    }
+
+    @media (min-width: 640px) {
+        .is-sticky-active {
+            left: 5%; /* Aligns with the header content on desktop */
+            width: auto !important;
+            right: auto;
+        }
+    }
+</style>
+
+<script>
+    const enrollBtn = document.getElementById('enroll-button');
+    // Capture the original position of the button
+    const initialOffset = enrollBtn.offsetTop;
+
+    window.addEventListener('scroll', () => {
+        // If we scroll past the button's original position (minus menu height)
+        if (window.pageYOffset > (initialOffset - 70)) {
+            enrollBtn.classList.add('is-sticky-active');
+        } else {
+            enrollBtn.classList.remove('is-sticky-active');
+        }
+    });
+</script>
 
     <!-- About Section -->
  <div id="about" class="scroll-mt-24">
