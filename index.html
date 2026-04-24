@@ -146,45 +146,57 @@
     </div>
 </header>
 
-<div class="flex flex-col sm:flex-row gap-4 justify-start items-center mt-4">
+<div class="flex flex-col sm:flex-row gap-4 justify-start items-center mt-6 w-full px-0">
     <a id="enroll-button" href="https://ecollegeportal.web.app/" 
        class="w-full sm:w-auto px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
         Enroll Child, View Grades or Upload Grades
     </a>
 
-    <a href="#academics" class="w-full sm:w-auto px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
+    <a href="#academics" 
+       class="w-full sm:w-auto px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
         Curriculum
     </a>
 </div>
 
 <style>
-    /* This class is applied automatically when you scroll */
+    /* Sticky state for the Enroll button */
     .is-sticky-active {
         position: fixed !important;
-        top: 70px; /* Adjust this so it sits perfectly below your menu */
-        left: 16px; /* Matches mobile padding */
+        top: 75px; /* Offset to stay below your top menu links */
+        left: 16px; /* Align with mobile screen padding */
         right: 16px;
         width: calc(100% - 32px) !important;
         z-index: 9999;
+        /* Matches your existing button shadow but slightly stronger for visibility while floating */
+        box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3); 
     }
 
+    /* Desktop adjustments for the sticky state */
     @media (min-width: 640px) {
         .is-sticky-active {
-            left: 5%; /* Aligns with the header content on desktop */
-            width: auto !important;
+            /* On desktop, we don't want it full screen width */
+            left: auto;
             right: auto;
+            width: fit-content !important;
+            /* Positioning it to the left side of the container area */
+            margin-left: 0; 
         }
     }
 </style>
 
 <script>
     const enrollBtn = document.getElementById('enroll-button');
-    // Capture the original position of the button
-    const initialOffset = enrollBtn.offsetTop;
+    // Using a slightly more robust way to find the button's position
+    const getOffset = (el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top + window.scrollY;
+    };
+    
+    const initialOffset = getOffset(enrollBtn);
 
     window.addEventListener('scroll', () => {
-        // If we scroll past the button's original position (minus menu height)
-        if (window.pageYOffset > (initialOffset - 70)) {
+        // Activates sticky mode once the button hits the 75px mark from top
+        if (window.pageYOffset > (initialOffset - 75)) {
             enrollBtn.classList.add('is-sticky-active');
         } else {
             enrollBtn.classList.remove('is-sticky-active');
