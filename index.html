@@ -441,17 +441,29 @@
         <h3 class="text-xl font-bold text-slate-900 mb-4">Humanities Department</h3>
         <p class="text-slate-600 text-sm leading-relaxed mb-6">Geography, History, and Christian Religious Education (C.R.E) are taught to give students a deep appreciation for our heritage, global dynamics, and spiritual foundation.</p>
         
-        <div class="mb-6">
-            <h4 class="text-xs font-bold text-amber-700 uppercase tracking-wider mb-3">Geography Practical Projects</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="overflow-hidden rounded-2xl border border-amber-100 shadow-sm bg-white p-2">
-                    <img src="images/IMG-20260505-WA0000.jpg" alt="IMG-20260505-WA0000.jpg" class="w-100 h-48 object-cover rounded-xl" />
-                </div>
-                <div class="overflow-hidden rounded-2xl border border-amber-100 shadow-sm bg-white p-2">
-                    <img src="images/IMG-20260505-WA0001.jpg" alt="IMG-20260505-WA0001.jpg" class="w-100 h-48 object-cover rounded-xl" />
-                </div>
+        <div class="space-y-6 mb-6">
+            <span class="inline-block px-3 py-1 bg-amber-600 text-white text-xs font-black rounded-md uppercase">Geography</span>
+            <p class="text-slate-600 text-sm">Geography Practical Projects. Click any photo to expand.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0000.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0000.jpg">
+                    <figcaption class="mt-1 text-xs font-normal text-gray-600">IMG-20260505-WA0000.jpg</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0001.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0001.jpg">
+                    <figcaption class="mt-1 text-xs font-normal text-gray-600">IMG-20260505-WA0001.jpg</figcaption>
+                </figure>
             </div>
         </div>
+
+        <div class="flex flex-wrap gap-2">
+            <span class="text-[10px] bg-white border border-amber-200 px-2 py-1 rounded-md font-bold text-amber-500">GEOGRAPHY</span>
+            <span class="text-[10px] bg-white border border-amber-200 px-2 py-1 rounded-md font-bold text-amber-500">HISTORY</span>
+            <span class="text-[10px] bg-white border border-amber-200 px-2 py-1 rounded-md font-bold text-amber-500">C.R.E</span>
+        </div>
+    </div>
+</div>
 
         <div class="flex flex-wrap gap-2">
             <span class="text-[10px] bg-white border border-amber-200 px-2 py-1 rounded-md font-bold text-amber-500">GEOGRAPHY</span>
