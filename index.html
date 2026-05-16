@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everlight College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Nunito', sans-serif; }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .bg-everlight { background-color: #f59e0b; }
+        .text-everlight { color: #f59e0b; }
+        #mobile-menu { transition: all 0.3s ease-in-out; }
+        
+        /* Lightbox styling */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+     /* Scroll to Top Button Styling */
+#scrollTopBtn {
+    display: none; /* Keep hidden by default */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999; /* Higher z-index to stay on top of all sections */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#scrollTopBtn:hover {
+    transform: translateY(-5px);
+    background-color: #d97706; /* Darker amber on hover */
+}
+
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 smooth-scroll">
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Zoomed View">
+        <p class="absolute bottom-10 text-white font-bold">Click anywhere to close</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center shadow-md">
+                            <span class="text-white font-black text-xl">E</span>
+                        </div>
+                        <div>
+                            <span class="brand-font text-sm font-extrabold text-slate-900 block leading-none tracking-tight">EVERLIGHT COLLEGE</span>
+                            <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-amber-600">Kampala</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-8 text-[10px] font-bold uppercase tracking-wide">
+                    <a href="#" class="text-amber-600 hover:text-amber-500 transition">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-amber-500 transition">About Us</a>
+                    <a href="#academics" class="text-slate-600 hover:text-amber-500 transition">Academics</a>
+                    <a href="#uniform" class="text-slate-600 hover:text-amber-500 transition">Uniform</a>
+                    <a href="#calendar" class="text-slate-600 hover:text-amber-500 transition">School Calendar</a>
+                    <a href="#staff" class="text-slate-600 hover:text-amber-500 transition">Our Staff</a>
+                    <a href="#gallery" class="text-slate-600 hover:text-amber-500 transition">Gallery</a>
+                    <a href="#conduct" class="text-slate-600 hover:text-amber-500 transition">Code of Conduct</a>
+                    <a href="#contact" class="text-slate-600 hover:text-amber-500 transition">Contact Us</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-toggle" class="p-2 text-slate-900 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 p-4 space-y-4 shadow-inner">
+            <a href="#" class="block text-amber-600 font-bold">Home</a>
+            <a href="#about" class="block text-slate-700 font-bold">About Us</a>
+            <a href="#academics" class="block text-slate-700 font-bold">Academics</a>
+            <a href="#uniform" class="block text-slate-700 font-bold">Uniform</a>
+            <a href="#calendar" class="block text-slate-700 font-bold">School Calendar</a>
+            <a href="#staff" class="block text-slate-700 font-bold">Our Staff</a>
+            <a href="#gallery" class="block text-slate-700 font-bold">Gallery</a>
+            <a href="#conduct" class="block text-slate-700 font-bold">Code of Conduct</a>
+            <a href="#contact" class="block text-slate-700 font-bold">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<header class="relative bg-white pt-2 pb-2 lg:pt-4 lg:pb-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-4 px-4">
+            <h1 class="text-xl lg:text-3xl font-extrabold text-slate-900 leading-tight sm:whitespace-nowrap">
+                Everlight College: Education for <span class="text-amber-500">Life</span> & Eternity
+            </h1>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-start mb-6">
+            <div class="relative rounded-[2rem] overflow-hidden shadow-xl border-4 border-white">
+                <img src="images/Everlight Students at Gate.jpg" alt="Everlight College Campus" class="w-full h-[200px] sm:h-[320px] object-fill bg-slate-50">
+            </div>
+            <div class="relative mt-4 lg:mt-0">
+                <div class="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white">
+                    <img src="images/20260416_132823.jpg" alt="Students Learning" class="w-full h-[200px] sm:h-[320px] object-fill bg-slate-50">
+                </div>
+                <div class="absolute -top-2 right-2 sm:-right-2 bg-white p-2 sm:p-3 rounded-xl shadow-lg border border-slate-100">
+                    <div class="text-amber-500 text-[10px] font-black tracking-widest uppercase">Motto</div>
+                    <div class="text-sm font-bold text-slate-900">Faith, Hope & Love</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-left w-full">
+            <p class="text-md lg:text-lg text-slate-600 mb-0 leading-relaxed">
+                Nurturing children into wholesome adults through academic excellence and vocational mastery. 
+                Located in Ggaba Parish Makindye Division, Kampala, Uganda.
+            </p>
+        </div>
+    </div>
+</header>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-0 relative z-20">
+    <div class="flex flex-col sm:flex-row gap-4 justify-start items-center w-full">
+        <a id="enroll-button" href="https://ecollegeportal.web.app/" 
+           class="w-full sm:w-auto px-4 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-all shadow-lg shadow-amber-200 text-center text-sm whitespace-nowrap">
+            Enroll Child, View Grades or Upload Grades
+        </a>
+
+        <a href="#academics" class="w-full sm:w-auto px-8 py-3 border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition text-center text-sm">
+            Curriculum
+        </a>
+    </div>
+</div>
+
+<style>
+    /* Sticky class applied by JS */
+    .is-sticky-active {
+        position: fixed !important;
+        top: 75px; /* Below your menu bar */
+        left: 16px; 
+        right: 16px;
+        width: calc(100% - 32px) !important;
+        z-index: 9999;
+        margin-top: 0 !important; /* Removes the negative margin when sticking */
+    }
+
+    @media (min-width: 640px) {
+        .is-sticky-active {
+            left: auto;
+            right: auto;
+            width: fit-content !important;
+        }
+    }
+</style>
+
+<script>
+    const enrollBtn = document.getElementById('enroll-button');
+    const getTargetPos = () => enrollBtn.getBoundingClientRect().top + window.scrollY;
+    let initialOffset = getTargetPos();
+
+    window.addEventListener('resize', () => { initialOffset = getTargetPos(); });
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > (initialOffset - 75)) {
+            enrollBtn.classList.add('is-sticky-active');
+        } else {
+            enrollBtn.classList.remove('is-sticky-active');
+        }
+    });
+</script>
+
+    <!-- About Section -->
+ <div id="about" style="scroll-margin-top: 150px;">
+        <div class="text-center py-12 bg-white">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-4">About Us</h2>
+        </div>
+        <section class="py-20 bg-[#4682B4] text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-20 items-start">
+                    <div>
+                        <h2 class="text-3xl font-extrabold mb-8 text-indigo-800">Education with a Purpose</h2>
+                        <p class="text-slate-100 mb-8">
+                      At Everlight College Kampala, we embraced the shift from knowledge based to competency based 
+                      curriculum. A Competency-Based Curriculum (CBC) is designed around specific outcomes and the 
+                      skills students need to acquire to succeed in real-world applications. Unlike traditional 
+                      curricula, which prioritize rote memorization and standardized testing, CBC emphasizes mastery 
+                      of skills at an individual pace. This shift not only respects diverse learning styles but also 
+                      aligns education more closely with the demands of the modern workforce.                        
+                    <div class="space-y-6">
+    <div class="relative p-6 border-l-4 border-amber-500 bg-slate-900/50 rounded-r-xl">
+        <p class="text-lg text-slate-100 leading-relaxed font-medium italic">
+            "Behind every child who believes in themselves is a teacher who believed in them first. 
+            For the past five years, our students have maintained a 100% pass rate in both the UCE 
+            and UACE national examinations." 
+        </p>
+        
+        <div class="mt-4">
+            <p class="text-amber-500 italic font-semibold">
+                — Calvin Isaac Busubiri
+            </p>
+            <p class="text-base text-white uppercase tracking-widest mt-1">
+                Director of Studies
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+<div class="bg-white/5 p-8 lg:p-12 rounded-[2.5rem] border border-white/10">
+<h3 class="text-xl font-bold text-indigo-800 mb-6 uppercase tracking-widest text-center">Our Commitment</h3>
+<div class="space-y-6 text-sm text-slate-300">
+    <div class="rounded-xl overflow-hidden border border-white/10 shadow-lg">
+        <img 
+            src="images/Vision and Mission.jpg" 
+            alt="Everlight College Vision and Mission" 
+            class="w-full h-auto block"
+        >
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Academics Section -->
+    <section id="academics" style="scroll-margin-top: 150px;" class="pt-24 pb-0 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Academics</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Our curriculum is designed to empower students with both theoretical knowledge and practical skills that last a lifetime</p>
+            </div>
+
+            
+                <!-- Sciences (Blue Pastel) -->
+<div class="max-w-6xl mx-auto px-4 mb-12">
+    <div class="bg-blue-50 p-8 lg:p-12 rounded-[2.5rem] shadow-sm border border-blue-100">
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.829c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Science Department</h3>
+        </div>
+
+        <p class="text-slate-600 text-base leading-relaxed mb-10">
+            Our science department focuses on practical experimentation and inquiry. We offer Biology, Chemistry, Physics, and Agriculture, ensuring students understand the natural world and modern agricultural techniques.
+        </p>
+
+        <div class="space-y-12">
+            <div class="space-y-6">
+                <span class="inline-block px-3 py-1 bg-blue-600 text-white text-base font-black rounded-md uppercase">Biology</span>
+                <p class="text-slate-600 text-base">Biology class involves interactive learning at Everlight College. In the biology lab students use microscopes to examine biological specimens and record their observations, developing practical skills. Click any photo to expand.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0029.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students examining biological specimens in the laboratory.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600"> </figcaption>
+                    </figure>
+                     <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130625.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Teacher demonstrating advanced microscope techniques to students.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600"> </figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130600.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical Biology lesson: Using microscopes to study cell structure.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600"> </figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130605.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Biology student recording detailed laboratory observations.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600"> </figcaption> 
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130607.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Interactive science learning and research at Everlight College.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600"> </figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0027.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Collaborative student group conducting a science experiment.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600"> </figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0028.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Developing essential practical skills in the Biology lab.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600"> </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <span class="inline-block px-3 py-1 bg-blue-600 text-white text-base font-black rounded-md uppercase">Chemistry</span>
+                <p class="text-slate-600 text-base">Focusing on chemical reactions, laboratory safety, and titration techniques. Students gain hands-on experience with reagents and measurements. Click any photo to expand.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130934.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students conducting a chemistry experiment.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Students conducting titration.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130937.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Chemistry practical lesson.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Chemistry practical lesson.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/ECK_ChemistryClass.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Laboratory technician supervising chemistry class.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Student in chemistry lab.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0005.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Physics and Chemistry integration: Timing experiments.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Timing chemical reactions.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0007.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Recording experimental data.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Recording experimental data.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0006.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students observing reaction results.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Observing reaction results.</figcaption>
+                    </figure>                  
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0009.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Titration setup in the chemistry lab.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Student in chemistry lab.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0014.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Detailed observation of chemical mixtures.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Observing chemical mixtures.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0016.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Preparing for practical chemistry assessment.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Practical chemistry assessment.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0018.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students writing lab reports.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Students writing lab reports.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <span class="inline-block px-3 py-1 bg-blue-600 text-white text-base font-black rounded-md uppercase">Physics</span>
+                <p class="text-slate-600 text-base">Exploring the fundamental laws of nature through mechanics, electricity, and optics. Students apply mathematical logic to physical phenomena in our well-equipped laboratory. Click any photo to expand.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_130748.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Physics student setting up laboratory apparatus.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Hands-on Physics exploration.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_131025.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical Physics demonstration.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Practical Physics demonstration.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0000.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Conducting experiments in the Physics lab.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Conducting lab experiments.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0001.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students analyzing wave patterns.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Analyzing wave patterns.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0002.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Physics students during a practical session.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Physics practical session.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0004.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Measuring physical constants in the lab.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Measuring physical constants.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0024.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Physics laboratory at Everlight College.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight Physics Lab.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <span class="inline-block px-3 py-1 bg-blue-600 text-white text-base font-black rounded-md uppercase">Agriculture</span>
+                <p class="text-slate-600 text-base">Bridging theory and practice through sustainable farming and crop management. Students participate in hands-on field activities and modern agricultural techniques by planting Collard Greens (Sukuma Wiki), Green Bananas (Matooke), and poultry farming. Click any photo to expand.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Agri_2.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical lessons in sustainable farming.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Collard Greens (Sukuma Wiki)</figcaption>
+                    </figure>
+                    
+                    
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Agri_6.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students participating in soil preparation.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Plantain trees.</figcaption>
+                    </figure>
+                    
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Agri_8.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Field-based learning for Agriculture students.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Poultry farming.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Agri_9.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students observing plant growth and health.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Plantain trees.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Agri_10.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Agriculture practical at Everlight College.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Poultry farming.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-6xl mx-auto px-4 mb-10">
+    <div class="bg-amber-50 p-8 rounded-[2.5rem] shadow-sm border border-amber-100 hover:shadow-md transition">
+        
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Humanities Department</h3>
+        </div>
+        
+        <p class="text-slate-600 text-base leading-relaxed mb-6">Geography, History, and Christian Religious Education (C.R.E) are taught to give students a deep appreciation for our heritage, global dynamics, and spiritual foundation. Click any photo to expand.</p>
+        
+        <div class="space-y-6 mb-6">
+            <span class="inline-block px-3 py-1 bg-amber-600 text-white text-base font-black rounded-md uppercase">Geography</span>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0000.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0000.jpg">
+                    <figcaption class="mt-1 text-base font-normal text-gray-600">Environmental conservation.</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0001.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0001.jpg">
+                    <figcaption class="mt-1 text-base font-normal text-gray-600">Environmental conservation.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2"> 
+            <span class="text-[10px] bg-white border border-amber-200 px-2 py-1 rounded-md font-bold text-amber-500">HISTORY</span>
+            <span class="text-[10px] bg-white border border-amber-200 px-2 py-1 rounded-md font-bold text-amber-500">C.R.E</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="max-w-6xl mx-auto px-4 mb-10">
+    <div class="bg-emerald-50 p-8 rounded-[2.5rem] shadow-sm border border-emerald-100 hover:shadow-md transition">
+        
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Languages & Math Department</h3>
+        </div>
+        
+        <p class="text-slate-600 text-base leading-relaxed mb-6">Strong emphasis on English Language and Literature to enhance communication skills, paired with rigorous Math to develop logic and analytical problem-solving abilities. Click any photo to expand.</p>
+        
+    
+         <div class="space-y-6 mb-6">
+            <span class="inline-block px-3 py-1 bg-emerald-600 text-white text-base font-black rounded-md uppercase">Language</span>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3"> 
+                <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260508-WA0002-EDIT.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0002.jpg">
+                    <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students' speech days.</figcaption>
+                </figure>
+                 <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260508-WA0006-EDIT.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0002.jpg">
+                    <figcaption class="mt-1 text-base font-normal text-gray-600">Digital content club.</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260508-WA0005.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0002.jpg">
+                    <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students' speech days in class.</figcaption>
+                </figure>
+                 <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260508-WA0004-EDIT.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0002.jpg">
+                    <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students' speech days in class.</figcaption>
+                </figure>
+            </div>
+        </div>
+ <div class="space-y-6 mb-6">
+            <span class="inline-block px-3 py-1 bg-emerald-600 text-white text-base font-black rounded-md uppercase">Mathematics</span>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <figure class="text-center">
+                    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0002.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260505-WA0002.jpg">
+                    <figcaption class="mt-1 text-base font-normal text-gray-600">Measurements</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-6xl mx-auto px-4 mb-12">
+    <div class="bg-violet-50 p-8 lg:p-12 rounded-[2.5rem] shadow-sm border border-slate-100">
+        <div class="flex items-center gap-4 mb-6">
+           <div class="w-12 h-12 bg-violet-200 text-indigo-700 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">ICT Department</h3>
+        </div>
+
+        <p class="text-slate-600 text-base leading-relaxed mb-10">
+In the digital age, we ensure our students are computer literate through our Information and Communication Technology (ICT) department. The course covers basic software usage, internet safety, and introduction to computer science. Click photo to expand.        </p>
+
+        <div class="space-y-12">
+            <div class="space-y-6">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/computer lab.jpg" class="w-full h-64 object-cover rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students working at individual stations in the Everlight College computer lab.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Students during a practical ICT session in the computer lab.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-6xl mx-auto px-4 mb-12">
+    <div class="bg-fuchsia-100 p-8 lg:p-12 rounded-[2.5rem] shadow-sm border border-fuchsia-200">
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-fuchsia-200 text-fuchsia-700 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                </svg>
+            </div> 
+            <h3 class="text-2xl font-bold text-slate-900">Art Department</h3>
+        </div>
+
+        <p class="text-slate-600 text-base leading-relaxed mb-10">
+Our Art Department is a vibrant hub for multi-disciplinary expression, from the stage to the creative lab. Students integrate acting, dance, fashion, and entertainment arts to develop a unique creative voice while mastering performance and design. Through hands-on practice in our dedicated rehearsal spaces—where performance meets design—students bring their artistic visions to life. Click any photo to expand.        
+</p>
+
+        <div class="space-y-12">
+            <div class="space-y-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/gallery7.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student art showcase.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students singing.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept24.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Advanced performance workshop.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students performing.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept25.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Theatrical production practice.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students performing.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/gallery8.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student gallery exhibition.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students singing.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept29.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Art studio collaboration.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept1.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students practicing performance arts.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept2.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Acting and drama rehearsal.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept3.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Creative expression in the art studio.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept4.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Fashion and design workshop.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept5.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students exploring visual arts.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept10.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Dance and choreography rehearsal.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept11.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical acting lessons.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept12.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Entertainment arts production.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_133605.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students engaging in creative arts.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept13.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Performance arts development.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept14.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical workshop session.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept15.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Students collaborating on artistic projects.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept16.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Artistic technique refinement.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept17.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Drama and stage expression.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students peforming a stage play.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept18.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Design and fashion creativity.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College student peforming a stage play.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept21.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Art student portfolio work.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students peforming a traditional dance.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept22.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Choreography and movement.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students singing.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept23.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Art department showcase piece.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students singing.</figcaption>
+                    </figure>       
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept26.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Expressive movement class.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students dancing.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept27.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student design project.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students dancing.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/gallery14.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Multimedia art project.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/gallery15.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Costume and fashion showcase.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Fashion Show.</figcaption>
+                    </figure>
+                     <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0024.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students peforming a traditional dance.</figcaption>
+                    </figure>
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0021.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students peforming a traditional dance.</figcaption>
+                    </figure>
+
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0003.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students participating in Art and Design.</figcaption>
+                    </figure>
+
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0004.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students participating in Art and Design.</figcaption>
+                    </figure>
+
+                    <figure class="text-center">
+                        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0005.jpg" class="w-full h-40 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+                        <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students participating in Art and Design.</figcaption>
+                    </figure>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Uniform Requirements -->
+<section id="uniform" style="scroll-margin-top: 150px;" class="mt-16 pt-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Uniform Requirements</h2>
+        
+        <p class="text-left text-slate-600 mb-8 w-full">
+The Everlight College school uniform stands as a hallmark of the Everlight identity, fostering a sense of belonging and professional excellence throughout all class levels. All students are required to adhere to the dress code for their respective classes. Click any photo to expand.        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div class="space-y-3">
+                <div class="relative rounded-[2rem] overflow-hidden shadow-lg border-4 border-white cursor-pointer group" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/S1 and S2.jpg" alt="Senior One & Two" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                </div>
+                <p class="text-center mt-2 text-base font-medium text-slate-700">Senior One & Senior Two Uniform</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="relative rounded-[2rem] overflow-hidden shadow-lg border-4 border-white cursor-pointer group" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/S3 and S4.jpg" alt="Senior Three & Four" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                </div>
+                <p class="text-center mt-2 text-base font-medium text-slate-700">Senior Three & Senior Four Uniform</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="relative rounded-[2rem] overflow-hidden shadow-lg border-4 border-white cursor-pointer group" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/A level uniform.jpg" alt="Senior Five & Six" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                </div>
+                <p class="text-center mt-2 text-base font-medium text-slate-700">A Level (Senior 5 & Senior 6) Uniform</p>
+            </div>
+
+    
+</section>
+
+    <!-- School Calendar page -->
+<section id="calendar" class="pt-10 pb-20 bg-white scroll-mt-16" style="scroll-margin-top: 150px;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-2">School Calendar</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Stay up to date with Everlight College's academic terms, holidays, and special events.</p>
+        </div>
+
+  <div class="grid lg:grid-cols-3 gap-8">
+    <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 leading-tight">Term One</h3>
+                <span class="text-base font-bold text-amber-600 uppercase tracking-wider">February - May 2026</span>
+            </div>
+        </div>
+        <ul class="space-y-4 text-sm text-slate-600">
+            <li class="flex justify-between border-b border-slate-200 pb-2"><span>Opening Date</span><span class="font-bold text-slate-900">Feb 10th</span></li>
+            <li class="flex justify-between border-b border-slate-200 pb-2"><span>Closing Date</span><span class="font-bold text-slate-900">May 1st</span></li>
+            <li class="flex justify-between text-amber-700 bg-amber-50/50 p-1 rounded"><span>Term Holiday</span><span class="font-bold">May 2nd - May 24th</span></li>
+        </ul>
+    </div>
+
+    <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 leading-tight">Term Two</h3>
+                <span class="text-base font-bold text-amber-600 uppercase tracking-wider"> May - August 2026</span>
+            </div>
+        </div>
+        <ul class="space-y-4 text-sm text-slate-600">
+            <li class="flex justify-between border-b border-slate-200 pb-2"><span>Opening Date</span><span class="font-bold text-slate-900">May 25th</span></li>
+            <li class="flex justify-between border-b border-slate-200 pb-2"><span>Closing Date</span><span class="font-bold text-slate-900">Aug 21st</span></li>
+            <li class="flex justify-between text-amber-700 bg-amber-50/50 p-1 rounded"><span>Term Holiday</span><span class="font-bold">Aug 22nd - Sept 13th</span></li>
+        </ul>
+    </div>
+
+    <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition">
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 leading-tight">Term Three</h3>
+                <span class="text-base font-bold text-amber-600 uppercase tracking-wider">September - December 2026</span>
+            </div>
+        </div>
+        <ul class="space-y-4 text-sm text-slate-600">
+            <li class="flex justify-between border-b border-slate-200 pb-2"><span>Opening Date</span><span class="font-bold text-slate-900">Sept 14th</span></li>
+            <li class="flex justify-between border-b border-slate-200 pb-2"><span>Closing Date</span><span class="font-bold text-slate-900">Dec 4th</span></li>
+            <li class="flex justify-between text-amber-700 bg-amber-50/50 p-1 rounded"><span>Term Holiday</span><span class="font-bold">Starts Dec 5th, 2026 - Jan 31st, 2027</span></li>
+        </ul>
+    </div>
+</div>
+
+       <div class="mt-6 text-center">
+   
+    <p class="font-extrabold text-slate-900 text-[13px] italic">* Dates are subject to change by the Ministry of Education.</p>
+</div>
+
+        <div class="mt-10 bg-sky-50 rounded-[2.5rem] border border-sky-100 p-8 md:p-12 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">Stay Ahead with the School Portal</h3>
+                <p class="text-slate-600 text-lg leading-relaxed mb-8 max-w-4xl mx-auto text-left">
+                    While this public calendar provides general term dates, the <span class="text-sky-600 font-bold">Broadcast News</span> feature inside the School Portal is our primary channel for urgent updates, school-wide announcements, and official policy changes delivered directly to your registered email address.
+                </p>
+                
+                <div class="inline-block bg-orange-50 border border-amber-100 p-6 rounded-2xl mb-8 shadow-sm">
+    <p class="font-extrabold text-slate-900 text-base mb-4 font-medium">
+        Registration is simple: just use a valid email address and choose a secure password.
+    </p>
+    <a href="https://ecollegeportal.web.app/" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-extrabold px-10 py-4 rounded-xl transition-all transform hover:scale-105 shadow-md uppercase tracking-wider">
+        Create Account
+    </a>
+</div>
+                 
+                <p class="text-slate-500 text-base">
+                    Already have an account? <a href="https://ecollegeportal.web.app/" class="text-sky-600 font-bold hover:underline">Log in here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Staff Section -->
+   <section id="staff" class="py-14 bg-white mb-0" style="scroll-margin-top: 150px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-0"> 
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-0">Our Staff</h2>
+            </div>
+           
+    <!-- Head Teacher -->         
+<section id="head-teacher-message" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/Specioza Kabasinga.jpg" alt="Specioza Kabasinga" class="w-full h-full object-cover block">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Specioza Kabasinga</h4>
+                    <p class="text-amber-600 text-base font-bold uppercase tracking-wide">Head Teacher</p>
+                    <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Phone:</span> +256775251135
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base mb-4 text-slate-700">Dear Team,</p>
+
+                <p class="text-base md:text-base mb-4">
+                    As this school term draws to a close, I want to take a moment—beyond the busyness, the reports, and the routines—to simply say: thank you. Each of you has carried out your responsibilities with such heart, skill, and grace. I've seen the early mornings, the late evenings, the creative lessons, the patient explanations, and the countless ways you go the extra mile—not because you have to, but because you care.
+                </p>
+
+                <p class="text-base md:text-base mb-4">
+                    You have not only taught lessons; you've shaped lives. You've inspired curiosity, built confidence, and created spaces where our students feel seen, heard, and valued. That's no small thing—it's extraordinary.
+                </p>
+
+                <p class="text-base md:text-base mb-4">
+                    I am genuinely proud to work alongside such a dedicated team. Your commitment and compassion are the heartbeat of this school, and it's because of your effort that we continue to grow stronger each term.
+                </p>
+
+                <p class="text-base md:text-base mb-4">
+                    Please take this break to rest and refresh—you've more than earned it. Know that your work is deeply appreciated, not only by me but by every student and family whose lives you've touched.
+                </p>
+
+                <div class="mt-4">
+                    <p class="text-base md:text-base text-slate-900">With heartfelt gratitude,</p>
+                    <p class="text-base md:text-base font-bold text-slate-900">Specioza Kabasinga</p>
+                    <p class="text-amber-600 text-[16px] md:text-base font-bold uppercase">Head Teacher</p>
+                </div>
+            </div>
+            <div class="clear-both"></div>
+        </div>
+    </div>
+</section>
+
+ <!-- Direct of Studies (DOS) -->
+<section id="dos-message" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/Calvin Isaac Busubiri.jpg" alt="Calvin Isaac Busubiri" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Calvin Isaac Busubiri</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide">Director of Studies</p>
+                    <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                            <span class="opacity-70">Phone:</span>+256753943462
+                            </p>
+                  <p class="text-black font-bold text-[11px] mt-2 flex items-center justify-center gap-1">
+
+                            <span class="opacity-70">Email:</span> busubiricalvin@gmail.com
+                        
+                    </p>
+                </div>
+            </div> 
+            <div class="text-slate-700 leading-relaxed">
+               <p class="text-base md:text-base mb-4">
+        Mr. Busubiri Isaac Calvin serves as the Director of Studies at Everlight College, where he leads academic strategy and fosters an environment of scholarly excellence. With over 10 years of experience in higher education, he is dedicated to enhancing the educational experience through innovative curriculum development, staff support, and student engagement initiatives.
+    </p> 
+    <p class="text-base md:text-base mb-4">
+        An accomplished educator, Mr. Busubiri holds a Bachelor of Education in Art & Design from Kampala University, Ggaba, and a Post Graduate Diploma (PGD) in Information Technology from Kyambogo University. His unique blend of pedagogical skills and technical expertise serves as the heartbeat of the school's academic growth.
+    </p>
+            </div>
+            <div class="clear-both"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Suzan -->
+
+<section id="english-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/Ninsiima Suzan.jpg" alt="Suzan Ninsiima" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Suzan Ninsiima</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide">English & Literature Teacher</p>
+                        <p class="text-black font-bold text-[10.2px] mt-2 flex items-center justify-center gap-1">
+
+                            <span class="opacity-70">Email:</span> ninsiimasuzan46@gmail.com
+                        
+                    </p>
+                </div>
+            </div> 
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base mb-4">
+                    My name is Suzan Ninsiima, and I am a dedicated teacher of English with a passion for helping students develop strong reading, writing, and communication skills. I teach English Language, Literature in English and General Paper, guiding students to think critically, analyze texts, and express their ideas with clarity and confidence.
+                </p> 
+                <p class="text-base md:text-base mb-4">
+                    I focus on making lessons clear, engaging, and practical so that students can apply their knowledge in real-life contexts. My teaching approach encourages creativity, independent thinking, and a deeper understanding of language and literature.
+                </p>
+                <p class="text-base md:text-base mb-4">
+                    I believe in creating a supportive classroom environment wherein every student feels motivated to participate and grow. I am committed to continuous learning and to helping students achieve both academic success and effective communication skills.
+                </p>
+            </div> 
+            <div class="clear-both"></div> 
+        </div>
+    </div>
+</section>
+
+<!-- Obia Jacob -->
+
+<section id="english-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/ObiaJacob.jpg" alt="Mr. Obia Jacob" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Obia Jacob</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide mb-2">Geography & CRE Teacher</p>               
+                
+                            <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                            <span class="opacity-70">Phone:</span>+256773715999
+                            </p>
+                            <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                            <span class="opacity-70">Phone:</span>+256773907915 
+                            </p>
+                            <p class="text-black font-bold text-[11px] mt-2 flex items-center justify-center gap-1">
+                            <span class="opacity-70">Email:</span>yakoboobia@gmail.com 
+                            </p>
+                </div>
+            </div> 
+            <div class="text-slate-700 leading-relaxed text-base md:text-base space-y-4">
+                <p>
+                    Obia Jacob is an educator specializing in Geography and Christian Religious Education (CRE). He stands out as a dedicated, self-driven teacher who brings a strong sense of purpose and commitment to his fields of expertise. 
+                </p>
+                <p>
+                    Fueled by a genuine passion for mentorship, Obia focuses his efforts on promoting academic and personal excellence among his students. His teaching approach is designed to inspire growth, helping every student reach their full potential.
+                </p>
+            </div>
+            <div class="clear-both"></div>
+        </div>
+    </div>
+</section>
+          
+                <!-- Victor Kato -->
+
+                <section id="chemistry-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/Kato Victor.jpg" alt="Kato Victor" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Kato Victor</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide">Chemistry & Math Teacher</p>
+                         <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                            <span class="opacity-70">Phone:</span>+256703854474
+                            </p>
+                  <p class="text-black font-bold text-[11px] mt-2 flex items-center justify-center gap-1">
+
+                            <span class="opacity-70">Email:</span> katovictor256@gmail.com
+                        
+                    </p>
+                </div>
+            </div> 
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base mb-4">
+                    My name is Kato Victor, a teacher of Chemistry and Math. I am thrilled to be part of the academic team, bringing my passion for numbers and science to the classroom. Holding a Bachelor of Science with Education, I strive to make Math and Chemistry engaging, relatable, and accessible to all students.
+                </p> 
+                <p class="text-base md:text-base mb-4">
+                    My goal is to foster critical thinking skills and build a solid foundation that inspires curiosity in both fields. In addition to teaching, I am proud to serve as the Senior One class teacher, where I focus on supporting the holistic development of my students.
+                
+                    I am committed to creating a positive, inclusive classroom environment where every learner feels empowered to achieve their academic and personal best.
+                </p>
+            </div>
+            <div class="clear-both"></div> 
+        </div>
+    </div>
+</section>
+
+<!-- Benitah Florence-->
+
+<section id="english-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/BenitahFlorence.jpg" alt="Benitah Florence Makuma" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Florence Benitah Makuma</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide mb-2">English & Literature Teacher | Journalist</p>
+                    <p class="text-black font-bold text-[10.1px] mt-2 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Email:</span> benitahflorence22@gmail.com
+                    </p>                
+                </div>
+            </div> 
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base">
+                    Florence Benitah Makuma is a teacher of English and Literature at Everlight College and currently serves as the Class Teacher for Senior Two. As a versatile professional bridging the fields of education and media, she holds a Bachelor’s degree in Mass Communication and a Post Graduate Diploma in Education, uniquely qualifying her as both an educator and a journalist. Her academic journey continues as she pursues a Master’s in Education Administration and Management, reflecting a deep commitment to institutional excellence. Through her work in the Department of English and Literature, Benitah mentors her students with the same clarity, purpose, and communication expertise she brings to her professional journalism.
+                </p>
+            </div>
+            <div class="clear-both"></div> 
+        </div>
+    </div>
+</section>
+
+<!-- Naigaga Oliver-->
+
+<section id="history-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/NaigagaOliver.jpg" alt="Naigaga Oliver" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Naigaga Oliver</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide mb-2">History & Geography Teacher</p>
+                    <p class="text-black font-bold text-[10.5px] mt-2 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Email:</span> naigagaoliver07@gmail.com
+                    </p>                
+                </div>
+            </div> 
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base">
+                    Naigaga Oliver is a secondary education professional who has been actively teaching at Everlight College since 2022. She completed her academic training at Kampala International University, where she obtained a Bachelor of Arts with Education, focusing her studies on both Geography and History. Throughout her years of service, she has utilized her specialized background to provide students with a deep understanding of historical events and global environments, maintaining a consistent track record of educational excellence and professional growth.
+                </p>
+            </div>
+            <div class="clear-both"></div> 
+        </div>
+    </div>
+</section>
+
+ <!-- Kakuru Victor -->
+
+ <section id="science-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/KakuruVictor.jpg" alt="Kakuru Victor" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Kakuru Victor</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide mb-2">Biology & Chemistry Teacher</p>
+                       <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                            <span class="opacity-70">Phone:</span>+256776468292
+                            </p>
+                    <p class="text-black font-bold text-[10.5px] mt-2 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Email:</span> kakuruvictor243@gmail.com
+                    </p>                
+                </div>
+            </div> 
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base">
+                    My name is Kakuru Victor, and I am a teacher of Biology and Chemistry. I am thrilled to be part of the academic team, bringing my passion for practical science to both the classroom and the environment beyond. I hold a Bachelor of Science with Education and strive to make Biology and Chemistry engaging, relatable, and accessible to all students. My goal is to foster critical thinking skills and build a solid foundation that inspires curiosity in both fields. I am focused on supporting the holistic development of my students and am committed to creating a positive, inclusive classroom environment where every student feels empowered to achieve their academic and personal best.
+                </p>
+            </div>
+            <div class="clear-both"></div> 
+        </div>
+    </div>
+</section>
+
+ <!-- Ndoboli Peter -->
+
+ <section id="math-ict-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <!-- Profile Card -->
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/NdoboliPeter.jpg" alt="Ndoboli Peter" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Ndoboli Peter</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide mb-2">Math & ICT Teacher</p>
+                    <p class="text-black font-bold text-[10.2px] mt-2 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Email:</span> ndobolipeter2020@gmail.com
+                    </p>                
+                </div>
+            </div> 
+           
+           <div class="text-slate-700 leading-relaxed">
+    <p class="text-base md:text-base mb-4">
+        My name is Ndoboli Peter, and I am a dedicated and experienced educator currently serving at Everlight College Kampala. With six years of professional experience and a strong focus on student achievement and digital literacy, I specialize in delivering high-impact instruction in Math and Information and Communications Technology (ICT) for both O and A Level students. I have a proven track record of guiding students through national examinations with a focus on critical thinking and problem-solving.
+    </p>
+    <p class="text-base md:text-base mb-4">
+        I am thoroughly well-versed in the New Lower Secondary Curriculum, ensuring student-centered learning and competency-based assessments while integrating modern technology into the classroom to enhance learning outcomes. I am deeply committed to fostering a logical understanding of mathematical concepts and equipping students with the essential technical skills required in today’s digital age.
+    </p>
+    <p class="text-base md:text-base">
+        As an educator, I believe every student has the potential to excel when provided with the right tools, and I strive to use my expertise to make complex subjects accessible, engaging, and empowering for all.
+    </p>
+</div>
+            <div class="clear-both"></div> 
+        </div>
+    </div>
+</section>
+
+<!-- Tusubira Vincent Francis -->
+
+<section id="physics-math-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <!-- Profile Card -->
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/TusubiraVincent.jpg" alt="Tusubira Vincent Francis" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Tusubira Vincent Francis</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide mb-2">Physics & Math Teacher</p>
+                    <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Phone:</span> +256742711540
+                    </p>                
+                </div>
+            </div> 
+    
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base">
+                    Tusubira Vincent Francis is a professional teacher of Physics and Math who brings integrity, competency, and enthusiasm to his educational practice. He holds a Bachelor’s degree in Science Education, which provides the foundation for his dedicated approach to secondary instruction. Driven by a passion for the sciences, he focuses on transforming his students into effective problem solvers by fostering critical thinking and a deep understanding of mathematical and physical principles.
+                </p>
+            </div>
+            <div class="clear-both"></div>
+        </div>
+    </div>
+</section>
+
+<!-- kaguta Isaac  -->
+
+<section id="math-geography-teacher-profile" class="pt-4 pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="block overflow-visible">
+            <!-- Profile Card -->
+            <div class="float-left mr-8 mb-4 w-48 md:w-64 lg:w-80 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-50">
+                <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="images/KagutaIsaac.jpg" alt="Kaguta Isaac" class="w-full h-full object-cover block" style="object-position: center 10%;">
+                </div>
+                <div class="bg-amber-50 p-4 text-center border-t-4 border-amber-100">
+                    <h4 class="text-lg font-bold text-slate-900">Kaguta Isaac</h4>
+                    <p class="text-amber-600 text-xs font-bold uppercase tracking-wide mb-2">Math, Geography & PE Teacher</p>
+                    <p class="text-black font-bold text-[14px] mt-2 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Phone:</span> +256780563255
+                    </p>
+                    <p class="text-black font-bold text-[11px] mt-1 flex items-center justify-center gap-1">
+                        <span class="opacity-70">Email:</span> isaackaguta23@gmail.com
+                    </p>                
+                </div>
+            </div> 
+    
+            <!-- Biography Paragraph -->
+            <div class="text-slate-700 leading-relaxed">
+                <p class="text-base md:text-base">
+                    Kaguta Isaac is a versatile educator who serves as a teacher of Math, Geography, and Physical Education (PE). With a multi-disciplinary approach to instruction, he is dedicated to developing both the academic and physical capabilities of his students. Whether he is navigating complex geographical landscapes, solving mathematical equations, or facilitating athletic development on the field, Isaac remains committed to providing a comprehensive and engaging learning experience that supports the diverse needs of every student he teaches.
+                </p>
+            </div>
+            <div class="clear-both"></div>
+        </div>
+    </div>
+</section>
+            
+    </section>
+
+    <!-- Gallery Section -->
+<section id="gallery" class="py-23.4 bg-slate-50" style="scroll-margin-top: 150px;">    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-slate-900 mt-12 mb-4">School Gallery</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">A glimpse into life at Everlight College. Click any photo or video to expand.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+ 
+             <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Specioza Kabasinga 2.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Vocational training">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga in her office.</figcaption>
+            </figure> 
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery18.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="School activities">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Prefectorate Body 2021/2022</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery19.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student collaboration">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students showing their certificates.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery20.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Learning in progress">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students showing their certificates.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery30.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest giving a Speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery31.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Classroom engagement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest giving a Speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery32.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Educational workshop">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Director of Studies Mr. Busubiri giving a Speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery33.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student activities">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest giving a Speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery34.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student project">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga giving a speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery35.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Creative session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College student giving a speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery40.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="School event">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest giving a Speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_133645.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Artistic development">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students with drums.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept6.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Art department session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept7.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical arts training">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept8.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student art project">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept9.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Creative workshop">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept19.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Fashion and design">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing a stage play.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept20.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Stage performance practice">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing a traditional dance.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/Art_dept28.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Studio work">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery1.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus event">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students' parents at one of Everlight College events. </figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery2.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student life">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head teacher Ms. Kabasinga celebrating with south sudanese students' association.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery3.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Academic studies">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest at one of Everlight College events.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery4.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Classroom collaboration">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Parent at one of Everlight College events.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery5.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Educational activities">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest at one of Everlight College events.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery6.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student group">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery9.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus view">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery10.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical learning">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest giving a speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery11.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Workshop session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Teacher giving a speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery12.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Vocational training">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College student giving a speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery13.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Skills development">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College Students.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery16.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Everlight students">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Fashion show.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery17.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus environment">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Fashion show.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery21.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student presentation">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Part of Everlight College staff.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery22.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Study session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga giving a speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery23.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Team activity">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Part of Everlight College staff.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery24.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Outdoor learning">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Hands-on fire safety demonstration and training session.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery25.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Group discussion">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Hands-on fire safety demonstration and training session.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery26.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Project work">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Hands-on fire safety demonstration and training session.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery27.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Educational display">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Hands-on fire safety demonstration and training session.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery28.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus involvement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Security officer signs documents during a collaborative meeting.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery29.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Peer learning">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guest giving a speech.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery36.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student workshop">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Parents at an Everlight College event</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery37.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="School presentation">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery38.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Group study">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Part of Everlight College staff.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery39.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Learning environment">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Parents at one of Everlight College events.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery41.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student engagement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Parents at one of Everlight College events.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery42.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical workshop">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guests giving a speech at Everlight College.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery43.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Creative activities">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery44.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus involvement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guests at one of Everlight College events.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery45.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Academic project">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Guests at one of Everlight College events.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery46.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Life at Everlight">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College patriotic club.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/gallery47.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus community">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0023.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student interaction">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing a Rwandan traditional dance.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_133311.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Learning activities">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students dressed for a performance.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_123932.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student project work">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in Everlight College library.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_132737.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Classroom discussion">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_133133.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Educational session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Teacher giving speech while Everlight College students listen.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_133925.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Vocational training">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College soccer team.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/20260416_134231.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student workshop">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College netball team.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0005.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="School assembly">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students wearing traditional Habesha wear.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0009.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Group activity">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students serving Habesha food.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0012.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical learning">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students wearing traditional Habesha wear.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0016.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus engagement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students of Eritrean descent singing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0020-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student life highlight">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0026-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Academic engagement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0027.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student collaboration">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0028-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Creative session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0029.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Classroom activity">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0030-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student achievement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0031-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical workshop">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College teacher supervising learning activity.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0032-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus life">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0037.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Study environment">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0038.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Group project">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0039-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Vocational excellence">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0040-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Academic learning">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0041-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0043-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Creative engagement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students doing a test in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0044-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student collaboration">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0045-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Classroom participation">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0047-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical workshop">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Director Of Studies Mr. Busibiri helping a teacher give test papers to students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0048-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Learning environment">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Director Of Studies Mr. Busibiri helping a teacher give test papers to students.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0049-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Academic success">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0050-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student involvement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0051-EDIT.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus community">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students in class.</figcaption>
+            </figure>
+
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0087.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="School activities">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga with some of her students.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0088.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student learning">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga with some of her students.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260416-WA0090.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Academic engagement">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260417-WA0032.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Practical session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga and one of the Everlight College teachers Ms. Suzan.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/School_Gallery1.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus event">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students after participating in outdoor activities.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/School_Gallery2.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Student activities">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students after participating in outdoor activities.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/School_Gallery3.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Learning in progress">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students after participating in outdoor activities.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/School_Gallery5.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Creative session">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students after participating in outdoor activities.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/School_Gallery6.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Campus highlights">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga with some of her students.</figcaption>
+            </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/School_Gallery8.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Vocational training">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga with some of her students.</figcaption>
+            </figure> 
+           
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260423-WA0003.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="Vocational training">
+                <figcaption class="mt-2 text-base font-medium text-slate-700">Head Teacher Ms. Kabasinga in her office</figcaption>
+            </figure> 
+           
+<figure class="text-center">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260502-WA0015.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260502-WA0015_2.jpg">
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Director Of Studies Mr. Busibiri and Everlight Students on field.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260502-WA0016.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260502-WA0016_2.jpg">
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Director Of Studies Mr. Busibiri and Everlight Students on field.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260502-WA0018.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260502-WA0018_2.jpg">
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students on Field.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260502-WA0020.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260502-WA0020_2.jpg">
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260502-WA0022.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="IMG-20260502-WA0022_2.jpg">
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students on field.</figcaption>
+</figure>
+
+    <figure class="text-center">
+        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0008.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+            <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students at Sunday services.</figcaption>
+        </figure>
+    <figure class="text-center">
+        <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0006.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+            <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students at Sunday services.</figcaption>
+                </figure>
+            <figure class="text-center">
+                <img onclick="openLightbox(this.src, this.alt)" src="images/IMG-20260505-WA0009.jpg" class="w-full h-64 object-cover object-top rounded-2xl cursor-pointer hover:opacity-90 transition shadow-sm border-2 border-white" alt="On-stage performance.">
+                <figcaption class="mt-1 text-base font-normal text-gray-600">Everlight College students at Sunday services.</figcaption>
+            </figure>
+
+<figure class="text-center">
+    <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/ECKstudents_Dance.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing a traditional dance.</figcaption>
+</figure>
+<figure class="text-center">
+    <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/VID-20260505-WA0012.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing at Sunday services.</figcaption>
+</figure>
+<figure class="text-center">
+  <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/VID-20260505-WA0011.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing at Sunday services.</figcaption>
+</figure>
+<figure class="text-center">
+ <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/VID-20260505-WA0010.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing at Sunday services.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/Drama group.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students performing a stage play.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/Poem.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students saying a poem.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/presentation.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students singing.</figcaption>
+</figure>
+
+<figure class="text-center">
+    <video controls 
+       preload="metadata"
+       playsinline
+       webkit-playsinline
+       onclick="this.requestFullscreen()" 
+       class="w-full h-64 aspect-video object-contain rounded-2xl shadow-sm border-2 border-white cursor-pointer bg-black">
+    <source src="images/South Sudanese presentation.mp4" type="video/mp4">
+</video>
+    <figcaption class="mt-2 text-base font-medium text-slate-700">Everlight College students & Head Teacher Ms. Kabasinga dancing a South Sudanese dance.</figcaption>
+</figure>
+
+        </div>
+    </div>
+</section>
+ 
+              <!-- CODE OF CONDUCT PAGE -->
+    <section id="conduct" class="py-20 bg-white" style="scroll-margin-top: 150px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-2">Code of Conduct</h2>
+            </div>
+            </div>
+<style>
+    #school-rules {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 900px; /* Prevents text from stretching too far */
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+
+    #school-rules h2 {
+        color: #1a3a5f; /* Deep school blue */
+        text-align: center;
+        border-bottom: 3px solid #f0ad4e; /* Golden accent */
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    #school-rules article {
+        background: white;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 12px; /* Rounded corners like your screenshot */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Soft shadow */
+    }
+
+    #school-rules h3 {
+        color: #d9534f; /* Alert red for categories */
+        border-left: 5px solid #d9534f;
+        padding-left: 15px;
+        margin-top: 0;
+    }
+
+    .rule-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .punishment-box {
+        background-color: #fff4f4;
+        border-left: 4px solid #d9534f;
+        padding: 10px 15px;
+        margin-top: 10px;
+        font-size: 0.95em;
+        border-radius: 4px;
+    }
+
+    .punishment-box strong {
+        color: #c9302c;
+    }
+
+    /* Fix for long words/links going off screen */
+    p, li {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background: #ccc;
+        margin: 40px 0;
+    }
+</style>
+
+<section id="school-rules">
+    <h2 style="font-weight: bold; color: black;">Everlight College Kampala School Rules and Regulations</h2>
+
+    <article class="general-rules">
+        <div class="rule-item">
+            <p><strong>Rule 1:</strong> All students in school and on any school activity outside, <strong>MUST</strong> put on full school uniform.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Non-uniform material will be confiscated, internal punishment, and suspension. All confiscated items will NOT be returned, but will be donated to organizations looking after needy children.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 2:</strong> 
+           <ol style="list-style-type: none; padding-left: 0; margin-left: 25px; margin-bottom: 5px;">
+    <li>1. At all times boys and girls with short hair <strong>MUST</strong> keep it short and well combed while girls with long hair must keep it neat and in a natural puff.</li>
+    <li>2. Painting of hair, face or nails and funny haircuts are prohibited. Girls should not wear fake nails.</li>
+    <li>3. No wearing of ear or nose, or finger rings, bungles etc.</li>
+    <li>4. No wearing of high-heeled shoes, sandals, or open shoes during class time.</li>
+    <li>5. Beards must be trimmed.</li>
+</ol>
+            <div class="punishment-box"><strong>Punishment:</strong> Confiscation of the items, internal punishment, and suspension.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 3:</strong> Irregularity in school attendance, failure to attend class without genuine reasons, dodging homework and assignment is a very serious offense.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Suspension and pending expulsion.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 4:</strong> All students must participate in all activities as per timetable by the school authority.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Internal punishments, suspension, and expulsion.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 5:</strong> Examination malpractice at all assessment levels is an offence.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Discontinued from sitting other exams, suspension, pending expulsion.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 6:</strong> Except during other language lessons like French, Luganda, etc, English <strong>MUST</strong> be used as a medium of communication in school.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Internal punishment.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 7:</strong> Clubs, societies, trips, and any other activities <strong>MUST</strong> be organized with the approval of the school authority.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> On all external trips school rules still apply. Failure to adhere to the rules will result in suspension of culprit(s) for a prescribed period.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 8:</strong> Students <strong>MUST</strong> safeguard and take care of school property.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Culprits pays 5 times the value of lost/damaged property, including school uniform.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 9:</strong> All students <strong>MUST</strong> at all times respect each other, Prefects, and all staff members.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Internal punishments, suspension, and pending expulsion.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 10:</strong> Stealing, physical violence like manhandling, bullying, among others is strictly prohibited.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Immediate suspension and pending expulsion.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 11:</strong> All gadgets like cameras, phones, radios, headsets, laptops, candles, paraffin, among others are only allowed with permission from the administration and must be kept in designated places.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Confiscation and immediate suspension. Fines totaling UGX 100,000 apply for returned items.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 12:</strong> Consumption of alcohol and intoxicating drugs including smoking are <strong>STRONGLY</strong> forbidden.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Immediate expulsion.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 13:</strong> No cooked food will be allowed through the gate into the school by any individual. (Except on visitation days).</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Immediate expulsion of the culprit.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 14:</strong> Attending prayers is a <strong>MUST</strong> for all students.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Internal punishment: repeat offenders face suspension and expulsion.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 15:</strong> Loitering, jumping over the fence, and escaping from school is a criminal offence.</p>
+            <div class="punishment-box"><strong>Punishment:</strong> Students caught jumping the fence face immediate expulsion and will be required to provide building materials (cement, bricks, sand, and barbed wire) and cover all labor costs.</div>
+        </div>
+
+        <div class="rule-item">
+            <p><strong>Rule 16:</strong> ANY FORM OF WITCHCRAFT OR SORCERY PRACTICES ARE DEALT WITH IMMEDIATE EXPULSION FROM SCHOOL.</p>
+        </div>
+
+      
+    <p><strong>OTHER PROHIBITIONS</strong></p>
+           <ol style="list-style-type: none; padding-left: 0; margin-left: 25px; margin-bottom: 5px;">
+        <li>1. It's illegal for a student to give any form of gift to a teacher, fellow student, and non-teaching staff.</li>
+        <li>2. All sexual relationships are forbidden and this leads to expulsion.</li>
+        <li>3. Female students will be subject to regular check-ups for pregnancy.</li>
+    </ol>
+
+
+    </article>
+
+    <article class="dormitory-code">
+    <h4 style="font-weight: bold; color: black; text-align: center; margin-bottom: 20px;">DORMITORY DISCIPLINE CODE FOR BOARDING STUDENTS ONLY</h4>
+        <p style="text-align: center;">There are three categories of offences and each carries its punitive measures</p>
+        <p style="text-align: center;"><em>N.B: A breach of common sense is a breach of the rules.</em></p>
+
+  <h4 style="font-weight: bold; color: black; margin-top: 30px;">CATEGORY A: CAPITAL OFFENCES</h4>
+<ol style="list-style-type: none; padding-left: 0; margin-left: 25px; margin-bottom: 5px">
+    <li>1. Leaving the dormitory without permission at any time including weekends.</li>
+    <li>2. Staying out for a night without permission.</li>
+    <li>3. Stealing.</li>
+    <li>4. Alcohol or drugs possession/influence.</li>
+    <li>5. Smoking or tobacco possession.</li>
+    <li>6. Receiving unauthorized visitors.</li>
+</ol>
+        <div class="punishment-box"><strong>PENALTY:</strong> Immediate expulsion from dormitory and possible indefinite suspension from school.</div>
+
+        <h4 style="font-weight: bold; color: black; margin-top: 30px;">CATEGORY B: SERIOUS CRIMES</h4>
+        <ol style="list-style-type: none; padding-left: 0; margin-left: 25px; margin-bottom: 5px">
+            <li>1. Insubordination.</li>
+             <li>2. Failure to attend prep.</li>
+            <li>3. Refusal of housework. 
+            <li>4. Lights out/Wake up bell refusal.</li>
+            <li>5. Returning late.</li>
+            <li>6. Bullying.</li>
+            <li>7. Fighting.</li>
+        </ol>
+<div class="punishment-box">
+    <strong>PENALTY:</strong> 
+        <ol style="list-style-type: none; padding-left: 0; margin-left: 25px; margin-bottom: 5px">
+    <li><span style="font-weight: bold; color: black;">1st offence:</span> 2 weeks suspension + 3 days manual labor.</li>
+    <li><span style="font-weight: bold; color: black;">2nd offence:</span> Expulsion from dormitory.</li>
+    </ol>
+</div>   
+
+<h4 style="font-weight: bold; color: black; margin-top: 30px;">CATEGORY C: RISKY BEHAVIOUR</h4>
+        <ol style="list-style-type: none; padding-left: 0; margin-left: 25px; margin-bottom: 5px">
+             <li>1. Not observing rules of personal hygiene.</li>
+            <li>2. Not laying ones’ bed.</li>
+            <li>3. Being rowdy.</li>
+            <li>4. Damaging dormitory property.</li>
+        </ol>
+<div class="punishment-box">
+    <strong>PENALTY:</strong> A record of offences will be kept in the behaviour book by the Director or the disciplinary committee chairperson and the consequences will include mopping, slashing etc., at the discretion of the director. An offending student will be expected to write a letter on what he/she is going to do to prevent the reoccurrence of the problem. Recurrence will be interpreted as “disobedience”. Disobedience is much more serious offence. The student is to be aware of this state that a further reoccurrence of the problem and the consequences of above risky behaviour is expulsion.
+</div>
+
+</article>
+
+   
+</section>
+
+            <!-- Inquiry Form -->
+<div id="contact" class="scroll-mt-40 max-w-4xl mx-auto bg-slate-50 rounded-[3rem] p-8 lg:p-16 border border-slate-200 shadow-sm">                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-bold text-slate-900">Contact Us</h3>
+                    
+                    <!-- Direct Call Button -->
+                    <a href="tel:+2567752511352" class="mt-4 inline-flex items-center px-6 py-3 bg-white border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition space-x-2">
+                        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        <span>Call Head Teacher</span>
+                    </a>
+                </div>
+                
+                <form id="inquiryForm" class="grid sm:grid-cols-2 gap-6">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-base font-bold text-slate-400 uppercase mb-2">Student Full Name</label>
+                        <input id="inq_name" type="text" class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition" required>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-base font-bold text-slate-400 uppercase mb-2">Parent Phone Number</label>
+                        <input id="inq_phone" type="tel" class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition" required>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-base font-bold text-slate-400 uppercase mb-2">Class</label>
+                        <select id="inq_class" class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition">
+                            <option>Senior 1</option>
+                            <option>Senior 2</option>
+                            <option>Senior 3</option>
+                            <option>Senior 4</option>
+                            <option>Senior 5</option>
+                            <option>Senior 6</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-base font-bold text-slate-400 uppercase mb-2">Study Mode</label>
+                        <select id="inq_mode" class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition">
+                            <option>Day</option>
+                            <option>Boarding</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-base font-bold text-slate-400 uppercase mb-2">Inquiry Details / Questions</label>
+                        <textarea id="inq_details" rows="4" placeholder="Please provide any specific questions or requirements you would like us to address." class="w-full px-5 py-4 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-4 focus:ring-amber-500/10 transition"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="col-span-2 py-5 bg-amber-500 text-white font-bold rounded-2xl hover:bg-amber-600 transition shadow-lg shadow-amber-200 flex items-center justify-center space-x-3">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.445 0 .01 5.437 0 12.045c0 2.112.552 4.173 1.6 6.004L0 24l6.117-1.605A11.803 11.803 0 0012.05 24c6.604 0 12.039-5.437 12.045-12.045 0-3.219-1.254-6.242-3.532-8.52z"></path></svg>
+                        <span>Send Via WhatsApp</span>
+                    </button>
+                    <p class="col-span-2 text-base text-slate-400 text-center">
+                            Clicking above will open WhatsApp with your details pre-filled.
+                    </p>                    
+                    <div id="successMsg" class="hidden col-span-2 p-5 bg-green-100 text-green-800 rounded-2xl text-center font-bold">
+                        Redirecting to WhatsApp...
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16 border-b border-white/5 pb-16">
+                <div>
+                  
+                    
+                </div>
+                <div>
+                    <h4 class="text-base font-bold uppercase tracking-widest text-amber-500 mb-6">Kampala Campus</h4>
+                    <p class="text-slate-400 text-sm mb-2">Kalungu Road, Off Ggaba Road</p>
+                    <p class="text-slate-400 text-sm mb-2">Soya Stage, P.O.Box 75816</p> 
+                    <p class="text-slate-400 text-sm">Clock Tower, Kampala, Uganda</p>
+                </div>
+                <div>
+                    <h4 class="text-base font-bold uppercase tracking-widest text-amber-500 mb-6">Contact Info</h4>
+                    <p class="text-slate-400 text-sm mb-2">Phone: 0775251135</p>
+                    <p class="text-slate-400 text-sm mb-2">Phone: 0700251482</p>
+                     <p class="text-slate-400 text-sm mb-2">Phone: 0772657276</p>
+                      <p class="text-slate-400 text-sm mb-2">Phone: 0751623750</p>
+                   
+                </div>
+            </div>
+            
+            <!-- Centered Copyright -->
+            <div class="text-center text-slate-500 text-[10px] uppercase font-bold tracking-widest">
+                <p class="mb-16">&copy; <script>document.write(new Date().getFullYear());</script> Everlight College Kampala. All Rights Reserved.</p>
+              
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+         // Science Department Lightbox Logic
+function openLightbox(src, caption) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    
+    // 1. Set the image source
+    if (lightboxImg) {
+        lightboxImg.src = src;
+    }
+
+    // 2. Find the text element by searching for the "Click" instruction
+    var target = null;
+    var potentialElements = lightbox.querySelectorAll('p, div, span, figcaption');
+    
+    for (var i = 0; i < potentialElements.length; i++) {
+        if (potentialElements[i].innerText.includes("Click anywhere to close")) {
+            target = potentialElements[i];
+            break;
+        }
+    }
+
+    // 3. Inject the caption above the instruction
+    if (target) {
+        if (caption && caption.length > 2) {
+            target.innerHTML = 
+                '<div style="color:white; font-weight:bold; font-size:1.1rem; margin-bottom:8px; line-height:1.2;">' + caption + '</div>' +
+                '<div style="font-size:0.8rem; opacity:0.7; text-transform:uppercase;">Click anywhere to close</div>';
+        } else {
+            target.innerHTML = "Click anywhere to close";
+        }
+    }
+
+    // 4. Show the lightbox
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+}
+
+        // Gallery Lightbox Logic
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.style.display = 'flex';
+        }
+
+        // Form Logic & WhatsApp Redirection
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('inq_name').value;
+            const phone = document.getElementById('inq_phone').value;
+            const targetClass = document.getElementById('inq_class').value;
+            const mode = document.getElementById('inq_mode').value;
+            const details = document.getElementById('inq_details').value;
+
+            const btn = e.target.querySelector('button');
+            const success = document.getElementById('successMsg');
+            
+            btn.innerText = 'Redirecting...';
+            
+            // Constructing WhatsApp Message
+            const waNumber = "256775251135"; 
+            const message = `*Everlight College Admission Inquiry*%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Class:* ${targetClass}%0A` +
+                            `*Mode:* ${mode}%0A` +
+                            `*Details:* ${details}`;
+            
+            setTimeout(() => {
+                success.classList.remove('hidden');
+                window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+                btn.innerText = 'Send Inquiry via WhatsApp';
+                e.target.reset();
+            }, 800);
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+    // --- SCROLL TO TOP LOGIC ---
+window.addEventListener('scroll', function() {
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    // Check if user has scrolled more than 300px
+    const scrollDistance = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollDistance > 300) {
+        scrollBtn.style.display = "flex"; // Changed to flex for centering
+    } else {
+        scrollBtn.style.display = "none";
+    }
+});
+    </script>
+
+   <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+        class="bg-amber-500 text-white w-14 h-14 rounded-full shadow-2xl border-2 border-white/20 flex items-center justify-center">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+</button>
+
+</body>
+</html>
